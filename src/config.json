@@ -1,0 +1,35 @@
+{
+  "paths": {
+    "cache_dir": "cache",
+    "label_map_file": "label_map.npy",
+    "classifications_file": "classifications.npy"
+  },
+  "parallelism": {
+    "use_all_cores": true,
+    "cores_to_use": -1
+  },
+  "segmentation": {
+    "try_patch_sizes": [2048, 1536, 1280, 1024, 896, 768, 640, 512],
+    "overlap": 0.05,
+    "batch_size": 1,
+    "diameter": 28
+  },
+  "classification": {
+    "thresholds": {
+      "red": 0.75,
+      "orange": 0.50,
+      "yellow": 0.25
+    },
+    "class_colors": {
+      "red":    [0, 0, 255],
+      "orange": [0, 165, 255],
+      "yellow": [0, 255, 255],
+      "blue":   [255, 0, 0]
+    },
+    "auto_calibrate": true,
+    "percentiles": { "yellow": 40, "orange": 65, "red": 85 }
+  },
+  "drawing": {
+    "outline_thickness": 3
+  }
+}
